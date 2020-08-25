@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "638c0b72-bcaf-4619-9bed-77f09c22b801",
+		"name": "Contacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"bemaneg6@gmail.com\",\r\n  \"password\": \"Asdqwezxc@123\",\r\n  \"confirmPassword\": \"Asdqwezxc@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Account/Register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Account/Logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Account",
+								"Logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "bemaneg63@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Asdqwezxc@123",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "contacts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/contacts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"88d1f918\",\r\n    \"userId\": \"b6ded3cd-d606-4164-9671-7f1146d11c89\",\r\n    \"name\": \"Beemen\",\r\n    \"lastName\": \"Sameh\",\r\n    \"avatar\": \"asd\",\r\n    \"nickname\": \"sdffsdf\",\r\n    \"company\": \"Asd\",\r\n    \"jobTitle\": \"sdf\",\r\n    \"email\": 11,\r\n    \"phone\": \"2424\",\r\n    \"address\": \"sfdsdf\",\r\n    \"birthday\": \"2020-06-12\",\r\n    \"notes\": \"sdfdsf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/contacts/88d1f918",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contacts",
+						"88d1f918"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{auth}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"88d1f918\",\r\n    \"name\": \"asd\",\r\n    \"lastName\": \"\",\r\n    \"avatar\": \"assets/images/avatars/profile.jpg\",\r\n    \"nickname\": \"\",\r\n    \"company\": \"\",\r\n    \"jobTitle\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"birthday\": \"\",\r\n    \"notes\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/contacts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/contacts/ef3eas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contacts",
+						"ef3eas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 2XHxPFU3H-cUbVr3z1GaRQvHrmN8IvpNqd1y2HAPn8uBLdnq-XsgqIuddJxSfTf5Jl7IYDjiHB6ZuCdKZvgb-kkYXJLPEGcAlfZVNmepWM2c4QTWdO0q0FSaHLW6WWea3e4WmialWnQ-kyQ0m4D8ZT3L6zatUInpLNDhemAXoo01_S6p7mKNyB5gPOFeKztxuAr9VqMIY3WyGo4T1CzanYd3jHaR81koYtIPG2pzL39-cQRT8-UeuGaBkanSdTG1J-exr6rgbICI2EyxTss5JWgSe8UiC4FGDFU6l_7htclugif5Bd5fs6kybJB0Vm8nGraxpM6tc04c_ghgUPU1nmD7oY1xaTxnqhc_eqCZuHDxnWRbISxcOM-AGsIuiWoGpaOKg62uUHu0_hLG7CJIzLeGnUumaDC62-s-uXItz9WdQqqD2zpGnNUHMeidsEl9AQgUGJpFxEjVwLoFo599v9klsf2W6MjiAjtbxRTdIb4JpwKu7WW9HDx-9_WSpyC5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/Values",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer wVQCUgcYr8RgQkBckNAsnmoXyn9vT2rR0yo4jOf0Es-AFvuE6LGa178j16QxRC4hAwPGgpdi7Ajft4Q3O9cAaqDvxHlMRgMJrnburBJFqjzDt45Pb8RmbvJMGIL5uLC9jawZY4SaQp3gAIcja8uC_vGMvvP0Mue-XROYjAbjODzXdIWWJZ4HTJy85Yyf-PfE328uEAwqahOVp-8_gNLdyM3Wddt-916YuDcTJToFoOakfIA_1fJaDM65RRtDFXtVRZq7sPnWg1Rf3iIOKqLpBQNt8aVoM2KgrVVeIsnAEf2XZSFa0YD0zCyrcVZSy1chs1M__ax81NyMGxGrtK7sh66l2BCGGjw6lDziu2WMBPWGJBUSkCxOMFmDk-RRGNX6jw5OvAPthvzf30i5CQwSRT7H0HOyppUzB3qaQceDAO0fkxvRYe7J2oKnPu8LO3E6OnNBtXf5uKy16vefmdxXrNXKWReAbEJIZpKtZfX0sB2sbHSrJc-oMoLEvTQosSyX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/Account/UserInfo",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"UserInfo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e09d8f84-faca-4ea6-8123-35e5b7bbc386",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "af5b92b1-e663-4edd-aade-0b3478ef163c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2c100afe-95a0-4c65-848e-3a3007cadff0",
+			"key": "baseUrl",
+			"value": ""
+		},
+		{
+			"id": "6bc84d09-a4e7-4751-b93c-2db1e7809b77",
+			"key": "auth",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
